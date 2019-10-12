@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookApi.Result;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,6 @@ namespace BookApi.Interface
 {
     public interface IUserService
     {
-        Task<bool> Login(string username, string password);
+        Task<BaseResult> Login(string username, string password);
     }
 }

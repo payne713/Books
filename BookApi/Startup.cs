@@ -36,6 +36,15 @@ namespace BookApi
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            {
+                builder
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .WithOrigins("http://localhost:3000")
+                    .AllowCredentials();
+            }));
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -66,6 +75,7 @@ namespace BookApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Books API V1");
             });
 
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }

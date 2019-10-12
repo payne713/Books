@@ -7,6 +7,8 @@ namespace BookApi.Result
 {
     public class BaseResult
     {
-        public int Status { get; set; }
+        public bool Status { get; set; }
+
+        public string Message { get; set; }
     }
 }

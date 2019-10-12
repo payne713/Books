@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi\\BookApi\\BookApi.csproj": {}
+    "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi_Github\\Books\\BookApi\\BookApi.csproj": {}
   },
   "projects": {
-    "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi\\BookApi\\BookApi.csproj": {
+    "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi_Github\\Books\\BookApi\\BookApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi\\BookApi\\BookApi.csproj",
+        "projectUniqueName": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi_Github\\Books\\BookApi\\BookApi.csproj",
         "projectName": "BookApi",
-        "projectPath": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi\\BookApi\\BookApi.csproj",
+        "projectPath": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi_Github\\Books\\BookApi\\BookApi.csproj",
         "packagesPath": "C:\\Users\\v-paya\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi\\BookApi\\obj\\",
+        "outputPath": "D:\\Study\\SourceCode\\NetCore\\2019-09\\2019-09-27\\BookApi_Github\\Books\\BookApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -72,10 +72,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,6 @@
 ﻿using BookApi.Interface;
+using BookApi.Request;
+using BookApi.Result;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -16,9 +18,9 @@ namespace BookApi.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<bool> Post(string username,string passsword)
+        public async Task<BaseResult> Post(LoginRequest loginRequest)
         {
-            return await _userService.Login(username,passsword);
+            return await _userService.Login(loginRequest.UserName,loginRequest.Password);
         }
 
         [HttpGet]
