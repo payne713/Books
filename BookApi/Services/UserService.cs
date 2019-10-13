@@ -2,7 +2,6 @@
 using BookApi.Interface;
 using BookApi.Models;
 using BookApi.Result;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Threading.Tasks;
@@ -24,12 +23,12 @@ namespace BookApi.Services
             };
         }
 
-        public async Task<BaseResult> Login(string username, string password)
+        public async Task<DataResult> Login(string username, string password)
         {
             var filterBuilder = Builders<User>.Filter;
             var filter = filterBuilder.Eq("UserName", username) & filterBuilder.Eq("Password", password);
 
-            var result = new BaseResult();
+            var result = new DataResult();
             try
             {
                 var list = await BaseService<User>.FindListAsync(mongodbHost, filter);
@@ -37,12 +36,14 @@ namespace BookApi.Services
                 {
                     result.Status = true;
                     result.Message = "请求成功";
+                    result.Data = list[0];
                     return result;
                 }
                 else
                 {
                     result.Status = false;
                     result.Message = "没有找到数据";
+                    result.Data = "";
                     return result;
                 }
             }
@@ -50,6 +51,7 @@ namespace BookApi.Services
             {
                 result.Status = false;
                 result.Message = ex.Message;
+                result.Data = "";
                 return result;
             }
         }

@@ -33,6 +33,8 @@ namespace BookApi
 
             services.AddSingleton<IUserService, UserService>();
 
+            services.AddSingleton<ICategoryService, CategoryService>();
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -41,7 +43,7 @@ namespace BookApi
                 builder
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .WithOrigins("http://localhost:3000")
+                    .WithOrigins("http://localhost:3000", "http://127.0.0.1:3000", "http://192.168.1.2:3000")
                     .AllowCredentials();
             }));
 

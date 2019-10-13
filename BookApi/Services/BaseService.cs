@@ -1,5 +1,4 @@
 ﻿using BookApi.Common;
-using BookApi.Interface;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -55,17 +54,17 @@ namespace BookApi.Services
         /// <param name="t">添加的实体</param>
         /// <param name="host">mongodb连接信息</param>
         /// <returns></returns>
-        public static async Task<int> AddAsync(MongodbHost host, T t)
+        public static async Task<bool> AddAsync(MongodbHost host, T t)
         {
             try
             {
                 var client = MongodbClient<T>.MongodbInfoClient(host);
                 await client.InsertOneAsync(t);
-                return 1;
+                return true;
             }
             catch
             {
-                return 0;
+                return false;
             }
         }
         #endregion
